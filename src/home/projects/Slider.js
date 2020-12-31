@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Slider = ({ projects }) => {
   const [index, setIndex] = useState(0);
@@ -35,15 +36,10 @@ const Slider = ({ projects }) => {
             <span className='dot' onClick={slideRight}></span>
             <span className='dot' onClick={slideRight}></span>
           </div>
+          <Link to='https://github.com/mansurissa?tab=repositories'>
+            <p className='special-link button more-btn'>More projects</p>
+          </Link>
         </div>
-        <button className='special-link  button more-btn'>
-          <a
-            href='https://github.com/mansurissa?tab=repositories'
-            target='#blank'
-          >
-            More projects
-          </a>
-        </button>
       </>
     )
   );
