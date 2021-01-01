@@ -1,4 +1,4 @@
-import MyPic from '../../images/my-pic.png';
+import MyPic from '../../../images/my-pic.png';
 import SocialMedias from '../SocialMedias';
 import SkillContainer from './SkillContainer';
 

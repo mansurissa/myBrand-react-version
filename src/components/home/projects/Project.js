@@ -6,12 +6,6 @@ const Project = ({
   codeLink,
   technologies,
 }) => {
-  let techs;
-  (() => {
-    technologies.forEach((techName) => {
-      techs = <p className='each-tech'>{techName}</p>;
-    });
-  })();
   return (
     <div className='each-project port'>
       <div>
@@ -21,7 +15,11 @@ const Project = ({
       <div className='text'>
         <h2 className='title-main p-name'>{projectName}</h2>
         <p className='para'>{description}</p>
-        <div className='tech '>{techs}</div>
+        <div className='tech '>
+          {technologies.map((tech) => (
+            <p class='each-tech'>{tech}</p>
+          ))}
+        </div>
         <div className='btns'>
           <button className='visit button special-link shadow-btn'>
             <a href={link} target='#blank' className=' special-link'>

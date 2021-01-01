@@ -1,7 +1,7 @@
 import Project from './Project';
-import PortfolioImg from '../../images/port.png';
-import AfrinetImg from '../../images/afrinet.png';
-import SmartBrainImg from '../../images/smart-brain.png';
+import PortfolioImg from '../../../images/port.png';
+import AfrinetImg from '../../../images/afrinet.png';
+import SmartBrainImg from '../../../images/smart-brain.png';
 import Slider from './Slider';
 const ProjectsContainer = () => {
   const projects = [
