@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 const Landing = () => {
   return (
     <div className='landing'>
@@ -12,9 +10,9 @@ const Landing = () => {
         </p>
       </div>
 
-      <Link to='#contacts'>
+      <a href='#contacts'>
         <button className='special-link button'>Contact Me</button>
-      </Link>
+      </a>
     </div>
   );
 };

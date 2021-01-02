@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
@@ -16,31 +17,31 @@ const NavUser = () => {
           <h1 className='title'>My Brand</h1>
         </Link>
         <ul className={state}>
-          <NavLink to='#'>
-            <li className='nav-link ' onClick={() => openNav()}>
+          <a href='#'>
+            <li className='nav-link' onClick={() => openNav()}>
               Home
             </li>
-          </NavLink>
-          <NavLink to='#about'>
+          </a>
+          <a href='#about'>
             <li className='nav-link' onClick={() => openNav()}>
               About
             </li>
-          </NavLink>
-          <NavLink to='#projects'>
+          </a>
+          <a href='#projects'>
             <li className='nav-link' onClick={() => openNav()}>
               Projects
             </li>
-          </NavLink>
+          </a>
           <NavLink to='/blog'>
             <li className='nav-link' onClick={() => openNav()}>
               Blog
             </li>
           </NavLink>
-          <NavLink to='#contacts'>
+          <a href='#contacts'>
             <li className='nav-link' onClick={() => openNav()}>
               Contacts
             </li>
-          </NavLink>
+          </a>
           <NavLink to='/login'>
             <li className='nav-link special-link ' onClick={() => openNav()}>
               <span>
