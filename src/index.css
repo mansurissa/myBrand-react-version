@@ -153,6 +153,7 @@ body {
   padding: 0.5rem 1.3rem;
   border: none;
   border-radius: 40px;
+  align-items: center;
 }
 .special-link:hover {
   color: #222f3d;
@@ -176,6 +177,7 @@ body {
   font-size: 1.2rem;
   text-align: center;
   color: white;
+  align-items: center;
 }
 .shadow-btn {
   box-shadow: 0 0 60px rgb(194, 194, 194);
@@ -303,7 +305,7 @@ body {
 .next {
   cursor: pointer;
   position: absolute;
-  top: 30%;
+  top: 50%;
   width: auto;
   padding: 1rem;
   background: var(--secondary-color);
@@ -366,11 +368,12 @@ button a {
   overflow: hidden;
   box-shadow: 10px 10px 10px rgb(221, 221, 221);
   margin: 1rem 0;
+  text-align: center;
 }
 .blog-posts-container {
   overflow: hidden;
   margin: auto;
-  max-width: 1100px;
+  max-width: 1000px;
   display: grid;
   grid-gap: 1.5rem;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -420,6 +423,9 @@ textarea {
 .submit {
   margin: auto;
 }
+.last-posts {
+  text-align: center;
+}
 
 .footer-msg {
   background: black;
@@ -441,6 +447,9 @@ textarea {
 span {
   margin-left: 0.5rem;
 }
+.addedCenter {
+  text-align: center;
+}
 /* LOGIN FORM */
 .login {
   background-color: var(--link-color);
@@ -449,6 +458,7 @@ span {
   background-repeat: no-repeat;
   background-position: top left;
   align-items: center;
+  height: 100vh;
 }
 .login-page {
   display: flex;
