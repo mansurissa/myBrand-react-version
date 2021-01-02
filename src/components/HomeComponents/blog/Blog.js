@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchPosts } from '../../../actions/blogActions';
+import { fetchPostsAction } from '../../../actions/blogActions';
 import PostCard from './PostCard';
 
 const mapStateToProps = (state) => {
@@ -13,12 +13,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onFetchPosts: () => dispatch(fetchPosts()),
+    fetchPosts: () => dispatch(fetchPostsAction()),
   };
 };
 
-const Blog = ({ onFetchPosts, posts, isPending }) => {
-  useEffect(() => onFetchPosts(), []);
+const Blog = ({ fetchPosts, posts, isPending }) => {
+  useEffect(() => fetchPosts(), []);
 
   return (
     <>

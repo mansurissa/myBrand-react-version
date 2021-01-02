@@ -1,5 +1,5 @@
 import React from 'react';
-import SocialMedias from '../SocialMedias';
+import SocialMedias from '../../SocialMedias';
 import ContactForm from './ContactForm';
 
 const ContactContainer = () => {

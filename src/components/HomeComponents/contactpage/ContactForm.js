@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import firebase from '../firebase/firebase';
-import FeedBack from './FeedBack';
+import firebase from '../../firebase/firebase';
+import FeedBack from '../../FeedBack';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -60,9 +60,9 @@ const ContactForm = () => {
         type='text'
         name='name'
         value={name}
+        onChange={(e) => setName(e.target.value)}
         className='name'
         placeholder='Please Enter your Name...'
-        onChange={(e) => setName(e.target.value)}
       />
       <input
         type='text'

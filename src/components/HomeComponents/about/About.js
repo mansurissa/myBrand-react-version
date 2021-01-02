@@ -1,5 +1,5 @@
 import MyPic from '../../../images/my-pic.png';
-import SocialMedias from '../SocialMedias';
+import SocialMedias from '../../SocialMedias';
 import SkillContainer from './SkillContainer';
 
 const About = () => {
