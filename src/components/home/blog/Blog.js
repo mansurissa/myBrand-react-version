@@ -20,8 +20,6 @@ const mapDispatchToProps = (dispatch) => {
 const Blog = ({ onFetchPosts, posts, isPending }) => {
   useEffect(() => onFetchPosts(), []);
 
-  const data = posts.data.posts;
-  console.log(data);
   return (
     <>
       <h1 className='title-main' id='blog'>
@@ -29,19 +27,21 @@ const Blog = ({ onFetchPosts, posts, isPending }) => {
       </h1>
       <p className='last-posts'>Latest posts from my blog</p>
       {isPending ? (
-        <h2>Loading posts..</h2>
+        <h2 className='addedCenter'>Loading posts..</h2>
       ) : (
         <div className='blog-posts-container'>
-          {data.map((post) => {
+          {posts.data.posts.map((post) => {
             return <PostCard post={post} />;
           })}
         </div>
       )}
-      <button className='button special-link shadow-btn'>
-        <a href='./blog/blogMain.html' target='#blank'>
-          Visit Blog
-        </a>
-      </button>
+      <div className='addedCenter'>
+        <button className='button special-link shadow-btn'>
+          <a href='./blog/blogMain.html' target='#blank'>
+            Visit Blog
+          </a>
+        </button>
+      </div>
     </>
   );
 };

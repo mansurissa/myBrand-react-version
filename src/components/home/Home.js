@@ -1,5 +1,6 @@
 import About from './about/About';
 import Blog from './blog/Blog';
+import ContactContainer from './contactpage/ContactContainer';
 
 import ErrorBoundary from './ErrorBoundary';
 import Landing from './Landing';
@@ -17,6 +18,7 @@ const Home = () => {
       <ErrorBoundary message={'Ooops...There was error fetching posts'}>
         <Blog />
       </ErrorBoundary>
+      <ContactContainer />
     </>
   );
 };
