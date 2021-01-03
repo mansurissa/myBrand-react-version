@@ -30,7 +30,7 @@ const Blog = ({ fetchPosts, posts, isPending }) => {
         <h2 className='addedCenter'>Loading posts..</h2>
       ) : (
         <div className='blog-posts-container'>
-          {posts.data.posts.map((post) => {
+          {posts.map((post) => {
             return <PostCard post={post} />;
           })}
         </div>

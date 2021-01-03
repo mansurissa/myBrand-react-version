@@ -16,7 +16,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const Login = ({ isLoggedIn, login }) => {
-  console.log('STATUS', isLoggedIn);
   const [password, setPassword] = useState('');
   const [feedback, setFeedback] = useState('none');
   const [email, setEmail] = useState('');
