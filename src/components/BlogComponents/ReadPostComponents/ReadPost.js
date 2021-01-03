@@ -24,6 +24,14 @@ const ReadPost = ({ fetchOnePost, post, isPending }) => {
   const postId = location.href.split('?id=')[1];
   useEffect(() => fetchOnePost(postId), []);
 
+  const like = async () => {
+    await fetch(`https://issa-portfolio-brand.herokuapp.com/blogs/${postId}`, {
+      method: 'put',
+      headers: { 'content-Type': 'application/json' },
+    });
+    location.reload();
+  };
+
   return !isPending ? (
     <>
       <NavBlog />
@@ -31,9 +39,15 @@ const ReadPost = ({ fetchOnePost, post, isPending }) => {
         <div class='post-read'>
           <PostContent post={post} />
         </div>
-        <p class='like-btn'>
+        <p
+          class='like-btn'
+          onClick={(e) => {
+            e.preventDefault();
+            like();
+          }}
+        >
           <i class='fa fa-thumbs-o-up' aria-hidden='true'></i>
-          <span class='right-num'>0</span>
+          <span class='right-num'>{post.likes}</span>
         </p>
         <Subscribe />
 

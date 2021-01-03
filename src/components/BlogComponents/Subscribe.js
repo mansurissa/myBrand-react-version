@@ -3,7 +3,7 @@ import { useState } from 'react';
 import FeedBack from '../FeedBack';
 const Subscribe = () => {
   const [email, setEmail] = useState('');
-  const [display, setDisplay] = useState('flex');
+  const [display, setDisplay] = useState('none');
   const [textMsg, setTextMsg] = useState('');
   const [feedback, setFeedback] = useState('none');
 
