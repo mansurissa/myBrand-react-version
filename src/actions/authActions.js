@@ -7,5 +7,7 @@ export const loginAction = (email, password) => (dispatch) => {
   auth
     .signInWithEmailAndPassword(email, password)
     .then((user) => dispatch({ type: 'LOGGED_IN', payload: user }))
-    .catch((err) => dispatch({ type: 'LOGIN_FAILED', payload: err }));
+    .catch((error) =>
+      dispatch({ type: 'LOGIN_FAILED', payload: error.message }),
+    );
 };

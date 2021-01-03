@@ -27,17 +27,20 @@ const Login = ({ isLoggedIn, login }) => {
     } else if (password.length < 1) {
       return 'Please enter your password';
     } else {
-      setFeedback('none');
       return true;
     }
   };
+
   const signIn = () => {
-    if (checkValidation()) {
+    if (checkValidation() === true) {
       login(email, password);
     } else {
       setFeedback('error');
       setTextMsg(checkValidation());
     }
+    setTimeout(() => {
+      setFeedback('none');
+    }, 3000);
   };
 
   return (

@@ -5,10 +5,11 @@ import { Link, NavLink } from 'react-router-dom';
 const NavUser = () => {
   const [state, setState] = useState('nav-links');
 
-  const openNav = () =>
+  const openNav = () => {
     state === 'nav-links open'
       ? setState('nav-links')
       : setState('nav-links open');
+  };
 
   return (
     <nav className='nav'>
