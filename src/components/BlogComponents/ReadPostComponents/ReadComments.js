@@ -35,7 +35,6 @@ const ReadComments = ({ postId, comments, fetchComments, loadingComments }) => {
                 --<em>{comment.name}</em>--
               </p>
               <p class='comment-time'> {moment(comment.time).fromNow()}</p>
-              {console.log('FUCK THIS', comment)}
             </div>
             <p class='commentPara'>{comment.message}</p>
           </div>
