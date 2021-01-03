@@ -1,11 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-restricted-globals */
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { fetchOnePostAction } from '../../../actions/blogActions';
+import { useEffect } from 'react';
 import NavBlog from '../NavBlog';
 import Subscribe from '../Subscribe';
 import PostContent from './PostContent';
+import Footer from '../../Footer';
+import Comment from './Comment';
+import ReadComments from './ReadComments';
+import { connect } from 'react-redux';
+import { fetchOnePostAction } from '../../../actions/blogActions';
 
 const mapStateToProps = (state) => {
   return {
@@ -53,23 +56,12 @@ const ReadPost = ({ fetchOnePost, post, isPending }) => {
 
         <h2 class='title-main comments-title'>Please leave a Comment</h2>
 
-        <section class='comments-section'>
-          <div class='commentsForm'>
-            <textarea
-              type='text'
-              class='comment-input'
-              placeholder='Your Comment here..'
-            ></textarea>
-
-            <button class='submit' onclick="addComment('${post._id}')">
-              Comment
-            </button>
-          </div>
-        </section>
-
+        <Comment postId={post._id} />
         <h2 class='title-main comments-title'>Comments from vistors</h2>
-        <section class='comments-container'></section>
+
+        <ReadComments postId={post._id} />
       </section>
+      <Footer />
     </>
   ) : (
     <h2>Loading...</h2>
