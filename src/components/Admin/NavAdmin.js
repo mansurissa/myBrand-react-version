@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Avatar from '../../images/my-pic.png';
 
 const NavAdmin = () => {
@@ -15,7 +15,7 @@ const NavAdmin = () => {
       <div class='links'>
         <h1 class='title'>My Brand</h1>
         <ul class={state}>
-          <NavLink to='#'>
+          <NavLink to='/dashboard'>
             <li class='nav-link' onClick={() => openNav()}>
               Dashboard
             </li>

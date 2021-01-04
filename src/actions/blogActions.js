@@ -29,3 +29,14 @@ export const fetchCommentsAction = (postId) => (dispatch) => {
       dispatch({ type: 'FETCH_COMMENTS_FAILED', payload: error.message }),
     );
 };
+
+export const fetchSubscribersAction = () => (dispatch) => {
+  dispatch({ type: 'FETCH_SUBS_PENDING' });
+  apiCallGet(`https://issa-portfolio-brand.herokuapp.com/blogs/subscribe`)
+    .then((data) => {
+      dispatch({ type: 'FETCH_SUBS_SUCCESS', payload: data.data.subsCount });
+    })
+    .catch((error) =>
+      dispatch({ type: 'FETCH_SUBS_FAILED', payload: error.message }),
+    );
+};

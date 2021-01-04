@@ -51,3 +51,18 @@ export const fetchComments = (state = initialStateComments, action = {}) => {
       return state;
   }
 };
+const initialStateSubs = {
+  subs: 0,
+  loadingSubs: true,
+};
+
+export const fetchSubs = (state = initialStateSubs, action = {}) => {
+  switch (action.type) {
+    case 'FETCH_SUBS_PENDING':
+      return { ...state, loadingComments: true };
+    case 'FETCH_SUBS_SUCCESS':
+      return { ...state, subs: action.payload, loadingSubs: false };
+    default:
+      return state;
+  }
+};
