@@ -1,5 +1,5 @@
 const initialState = {
-  queries: {},
+  queries: [],
   loading: false,
 };
 
