@@ -34,7 +34,7 @@ const deleteQuery = (id) => {
 const Queries = ({ queries, loading, fetchQueries }) => {
   useEffect(fetchQueries(), []);
   const data = [];
-  !loading &&
+  queries.length &&
     queries.forEach((doc) => {
       data.push(doc.data());
     });
@@ -43,27 +43,27 @@ const Queries = ({ queries, loading, fetchQueries }) => {
   return (
     <>
       <NavAdmin />
-      <section className='queries-container'>
-        <h2 class='title-main queries-h2'>This is what you got from vistors</h2>
+      <section classNameName='queries-container'>
+        <h2 className='title-main queries-h2'>
+          This is what you got from vistors
+        </h2>
         <hr />
         {
           (data.map = (query) => (
-            <div class='single-query'>
-              <div class='disp-flex'>
-                <h2 class='title commenter-name'>{query.name}</h2>
-                <p class='time'>{moment(query.time).fromNow()}</p>
+            <div className='single-query'>
+              <div className='disp-flex'>
+                <h2 className='title commenter-name'>{query.name}</h2>
+                <p className='time'>{moment(query.time).fromNow()}</p>
               </div>
               <p>{query.message}</p>
-              <div class='disp-flex'>
-                <p class='sender-email'>
+              <div className='disp-flex'>
+                <p className='sender-email'>
                   <em>{query.email}</em>
                 </p>
                 <i
-                  class='fa fa-trash-o delete-icon'
+                  className='fa fa-trash-o delete-icon'
                   aria-hidden='true'
-                  onclick="deleteQuery('${
-            doc.id
-          }')"
+                  onClick={() => deleteQuery()}
                 ></i>
               </div>
             </div>

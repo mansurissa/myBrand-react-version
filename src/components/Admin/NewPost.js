@@ -1,5 +1,7 @@
 import React from 'react';
 import NavAdmin from './NavAdmin';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 const NewPost = () => {
   return (
@@ -19,7 +21,14 @@ const NewPost = () => {
             <img className='preview' alt='' src='' />
           </div>
           <div className='body'></div>
-
+          <CKEditor
+            editor={ClassicEditor}
+            data='<p>Hello </p>'
+            onChange={(event, editor) => {
+              const data = editor.getData();
+              console.log({ event, editor, data });
+            }}
+          />
           <button className='submit' type='submit '>
             Create
           </button>
