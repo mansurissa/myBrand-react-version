@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import FeedBack from '../FeedBack';
 import { connect } from 'react-redux';
 import { loginAction } from '../../actions/authActions';
-import { Redirect } from 'react-router-dom';
 
 const mapStateToProps = (state) => {
   return {
@@ -35,7 +34,6 @@ const Login = ({ isLoggedIn, login }) => {
   const signIn = async () => {
     if (checkValidation() === true) {
       await login(email, password);
-      // isLoggedIn ? <Redirect to='/dashboard' /> : <Redirect to='/login' />;
     } else {
       setFeedback('error');
       setTextMsg(checkValidation());

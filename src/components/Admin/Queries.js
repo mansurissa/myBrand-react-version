@@ -32,13 +32,7 @@ const deleteQuery = (id) => {
 };
 
 const Queries = ({ queries, loading, fetchQueries }) => {
-  useEffect(fetchQueries(), []);
-  const data = [];
-  queries.length &&
-    queries.forEach((doc) => {
-      data.push(doc.data());
-    });
-  console.log('OOOOOO', data);
+  useEffect(() => fetchQueries(), []);
 
   return (
     <>
@@ -48,8 +42,9 @@ const Queries = ({ queries, loading, fetchQueries }) => {
           This is what you got from vistors
         </h2>
         <hr />
-        {
-          (data.map = (query) => (
+
+        {queries.length ? (
+          queries.map((query) => (
             <div className='single-query'>
               <div className='disp-flex'>
                 <h2 className='title commenter-name'>{query.name}</h2>
@@ -68,7 +63,9 @@ const Queries = ({ queries, loading, fetchQueries }) => {
               </div>
             </div>
           ))
-        }
+        ) : (
+          <h1>Loading...</h1>
+        )}
       </section>
     </>
   );

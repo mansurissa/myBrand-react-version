@@ -4,7 +4,11 @@ const ref = firebase.firestore().collection('Queries');
 
 export const getQueriesAction = () => (dispatch) => {
   dispatch({ type: 'QUERIES_PENDING' });
-  ref.onSnapshot((result) =>
-    dispatch({ type: 'QUERIES_SUCCESS', payload: result }),
-  );
+  ref.onSnapshot((result) => {
+    const data = [];
+    result.forEach((doc) => {
+      data.push({ ...doc.data(), id: doc.id });
+    });
+    dispatch({ type: 'QUERIES_SUCCESS', payload: data });
+  });
 };
