@@ -1,6 +1,6 @@
 const initialStatePosts = {
   posts: [],
-  isPending: true,
+  isPending: false,
 };
 
 export const fetchPosts = (state = initialStatePosts, action = {}) => {

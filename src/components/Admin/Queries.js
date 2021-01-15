@@ -37,7 +37,7 @@ const Queries = ({ queries, loading, fetchQueries }) => {
   return (
     <>
       <NavAdmin />
-      <section classNameName='queries-container'>
+      <section className='queries-container'>
         <h2 className='title-main queries-h2'>
           This is what you got from vistors
         </h2>
@@ -58,7 +58,7 @@ const Queries = ({ queries, loading, fetchQueries }) => {
                 <i
                   className='fa fa-trash-o delete-icon'
                   aria-hidden='true'
-                  onClick={() => deleteQuery()}
+                  onClick={() => deleteQuery(query.id)}
                 ></i>
               </div>
             </div>

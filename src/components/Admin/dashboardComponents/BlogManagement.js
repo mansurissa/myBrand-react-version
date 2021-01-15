@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
@@ -16,6 +17,19 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchPosts: () => dispatch(fetchPostsAction()),
   };
+};
+
+const deletePost = (id) => {
+  console.log(id);
+  const confirmation = confirm('Are you sure deleting this post?');
+  confirmation &&
+    (async () => {
+      await fetch(`https://issa-portfolio-brand.herokuapp.com/blogs/${id}`, {
+        method: 'DELETE',
+        headers: { 'content-Type': 'application/json' },
+      });
+      location.reload();
+    })();
 };
 
 const BlogManagement = ({ fetchPosts, posts, isPending }) => {
@@ -62,14 +76,17 @@ const BlogManagement = ({ fetchPosts, posts, isPending }) => {
                     </p>
                   </div>
                   <div className='post-options'>
-                    <a href='./editPost.html?id=${post._id}'>
+                    <Link to={`/dashboard/editPost/?${post._id}`}>
                       <button className='edit button special-link shadow-btn'>
                         Edit
                       </button>
-                    </a>
+                    </Link>
                     <button
                       className='delete button special-link shadow-btn'
-                      onClick="deletePost('${post._id}')"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        deletePost(post._id);
+                      }}
                     >
                       Delete
                     </button>
