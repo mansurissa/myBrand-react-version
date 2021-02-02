@@ -2,47 +2,32 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-const NavUser = () => {
+const NavBlog = () => {
   const [state, setState] = useState('nav-links');
 
-  const openNav = () => {
+  const openNav = () =>
     state === 'nav-links open'
       ? setState('nav-links')
       : setState('nav-links open');
-  };
 
   return (
     <nav className='nav'>
       <div className='links'>
-        <Link to='/'>
-          <h1 className='title'>My Brand</h1>
+        <Link to='/blog'>
+          <h1 className='title'>Super Blog</h1>
         </Link>
         <ul className={state}>
-          <a href='#'>
+          <NavLink to='/#projects'>
             <li className='nav-link' onClick={() => openNav()}>
-              Home
+              Portfolio
             </li>
-          </a>
-          <a href='#about'>
+          </NavLink>
+          <NavLink to='/#about'>
             <li className='nav-link' onClick={() => openNav()}>
               About
             </li>
-          </a>
-          <a href='#projects'>
-            <li className='nav-link' onClick={() => openNav()}>
-              Projects
-            </li>
-          </a>
-          <NavLink to='/blog'>
-            <li className='nav-link' onClick={() => openNav()}>
-              Blog
-            </li>
           </NavLink>
-          <a href='#contacts'>
-            <li className='nav-link' onClick={() => openNav()}>
-              Contacts
-            </li>
-          </a>
+
           <NavLink to='/login'>
             <li className='nav-link special-link ' onClick={() => openNav()}>
               <span>
@@ -62,4 +47,4 @@ const NavUser = () => {
   );
 };
 
-export default NavUser;
+export default NavBlog;

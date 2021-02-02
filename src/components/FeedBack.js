@@ -16,7 +16,6 @@ const Sucess = ({ type, text }) => {
         <p className='invalidMsg'>
           <i class='fa fa-times-circle' aria-hidden='true'></i> {text}
         </p>
-        ;
       </div>
     );
   } else {

@@ -16,7 +16,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const Login = ({ isLoggedIn, login }) => {
-  console.log('STATUS', isLoggedIn);
   const [password, setPassword] = useState('');
   const [feedback, setFeedback] = useState('none');
   const [email, setEmail] = useState('');
@@ -28,17 +27,20 @@ const Login = ({ isLoggedIn, login }) => {
     } else if (password.length < 1) {
       return 'Please enter your password';
     } else {
-      setFeedback('none');
       return true;
     }
   };
-  const signIn = () => {
-    if (checkValidation()) {
-      login(email, password);
+
+  const signIn = async () => {
+    if (checkValidation() === true) {
+      await login(email, password);
     } else {
       setFeedback('error');
       setTextMsg(checkValidation());
     }
+    setTimeout(() => {
+      setFeedback('none');
+    }, 3000);
   };
 
   return (
